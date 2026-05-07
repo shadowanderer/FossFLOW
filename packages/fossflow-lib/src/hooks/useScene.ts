@@ -425,16 +425,18 @@ export const useScene = () => {
     [createModelItem, createViewItem, saveToHistoryBeforeChange]
   );
 
-  const copyObjectsToClipboard = (uiState: UiStateStore) => {
+  const copyObjectsToClipboard = (uiState: UiStateStore, selectedItem?: ItemReference) => {
     const model = modelStoreApi.getState()
-    const selectedObjects = (
-      uiState.mode.type === 'LASSO' ||
-      uiState.mode.type === 'FREEHAND_LASSO'
-    ) && uiState.mode.selection ?
-      uiState.mode.selection.items
-      :
-      [uiState.itemControls && 'id' in uiState.itemControls ? (uiState.itemControls as ItemReference) : null].filter(Boolean) as ItemReference[];
-
+    const selectedObjects = 
+      selectedItem ? [selectedItem] :
+      (
+        uiState.mode.type === 'LASSO' ||
+        uiState.mode.type === 'FREEHAND_LASSO'
+      ) && uiState.mode.selection ?
+        uiState.mode.selection.items
+        :
+        [uiState.itemControls && 'id' in uiState.itemControls ? (uiState.itemControls as ItemReference) : null].filter(Boolean) as ItemReference[];
+        
     copyObject(selectedObjects.map((currentItem) => {
       if (!currentItem) return;
       switch (currentItem.type) {

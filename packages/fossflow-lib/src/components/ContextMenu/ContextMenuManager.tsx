@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useUiStateStore } from 'src/stores/uiStateStore';
+import { useUiStateStore, useUiStateStoreApi } from 'src/stores/uiStateStore';
 import { generateId, findNearestUnoccupiedTile } from 'src/utils';
 import { useScene } from 'src/hooks/useScene';
 import { useModelStore } from 'src/stores/modelStore';
@@ -18,10 +18,10 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
   const contextMenu = useUiStateStore((state) => {
     return state.contextMenu;
   });
-
   const uiStateActions = useUiStateStore((state) => {
     return state.actions;
   });
+  const uiStateApi = useUiStateStoreApi();
 
   const [ menuItemsBeforeClosing, setMenuItemsBeforeClosing ] = useState([{ label: '', onClick:() => {} }]);
 
@@ -30,13 +30,14 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
   }, [uiStateActions]);
 
   const menuItems = useMemo(() => {
-    if (!contextMenu) return menuItemsBeforeClosing
+    if (!contextMenu) return menuItemsBeforeClosing;
     if (contextMenu.type === 'SELECTION') {
       return [
         {
-          label: 'Copy Selected',
+          label: 'Copy Selection',
           onClick: () => {
-            alert('tryna copy')
+            const uiState = uiStateApi.getState();
+            scene.copyObjectsToClipboard(uiState);
             onClose();
           }
         }
@@ -54,7 +55,8 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
         {
           label: `Copy ${itemTypeName}`,
           onClick: () => {
-            alert('tryna copy')
+            const uiState = uiStateApi.getState();
+            scene.copyObjectsToClipboard(uiState, contextMenu.item);
             onClose();
           }
         }
@@ -107,8 +109,7 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
   }, 
   [contextMenu && contextMenu.type, contextMenu?.item]);
 
-  useEffect(() => setMenuItemsBeforeClosing(menuItems), menuItems)
-
+  useEffect(() => setMenuItemsBeforeClosing(menuItems), [menuItems]);
 
   return (
     <ContextMenu
@@ -117,8 +118,4 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
       menuItems={menuItems}
     />
   );
-
-  // Remove ITEM context menu since layer ordering only works for rectangles
-  // and provides no value for regular diagram items
-
 };
