@@ -357,7 +357,7 @@ export const getConnectorPath = ({
 } => {
   if (anchors.length < 2)
     throw new Error(
-      `Connector needs at least two anchors (receieved: ${anchors.length})`
+      `Connector needs at least two anchors (received: ${anchors.length})`
     );
 
   const anchorPosition = anchors.map((anchor) => {

@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Bug Fixes
 
-* Fixed issues with history not fully working, undo/redo was hit or miss. Additionally added a huge amount of CI/CD testing using selenium so that we can simulate creating a diagram, placing nodes, connceting them, undo/redo, and rectangles/text as well, with love, Stan ([047df92](https://github.com/stan-smith/FossFLOW/commit/047df927858417ec068a749a3f6a0c6dd8741fec))
+* Fixed issues with history not fully working, undo/redo was hit or miss. Additionally added a huge amount of CI/CD testing using selenium so that we can simulate creating a diagram, placing nodes, connecting them, undo/redo, and rectangles/text as well, with love, Stan ([047df92](https://github.com/stan-smith/FossFLOW/commit/047df927858417ec068a749a3f6a0c6dd8741fec))
 
 ## [1.10.6](https://github.com/stan-smith/FossFLOW/compare/v1.10.5...v1.10.6) (2026-02-14)
 
@@ -338,8 +338,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Features
 
-* Added Portugues, French, Hindi, Bengali, and Russian support -Stan ([b299bc3](https://github.com/stan-smith/FossFLOW/commit/b299bc33018b47708d546a43c80ee46629be818f))
-* Added Spanish support! added more I18n compatability -Stan ([be14d87](https://github.com/stan-smith/FossFLOW/commit/be14d8705319da406a1cad142731ee0a698bcd3c))
+* Added Portuguese, French, Hindi, Bengali, and Russian support -Stan ([b299bc3](https://github.com/stan-smith/FossFLOW/commit/b299bc33018b47708d546a43c80ee46629be818f))
+* Added Spanish support! added more I18n compatibility -Stan ([be14d87](https://github.com/stan-smith/FossFLOW/commit/be14d8705319da406a1cad142731ee0a698bcd3c))
 * Lots of language support! ([956a2af](https://github.com/stan-smith/FossFLOW/commit/956a2af52f534be02b7d417f413a0ee66dd2e17d))
 
 ## [1.4.0](https://github.com/stan-smith/FossFLOW/compare/v1.3.0...v1.4.0) (2025-10-11)
@@ -493,7 +493,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * implements text tool ([c240def](https://github.com/stan-smith/FossFLOW/commit/c240def317422521280b5264e2b2797472074f02))
 * implements transform controls for rectangles ([cb36408](https://github.com/stan-smith/FossFLOW/commit/cb3640817358f5543fc6fc24bb36fd44f3dcd50f))
 * imports isopacks as separate package ([0580440](https://github.com/stan-smith/FossFLOW/commit/0580440b28c42d6e70c792c9090f7a877c37413e))
-* improves label handeling ([1d3e7d5](https://github.com/stan-smith/FossFLOW/commit/1d3e7d51836f2d33f9876c40b202634154eab307))
+* improves label handling ([1d3e7d5](https://github.com/stan-smith/FossFLOW/commit/1d3e7d51836f2d33f9876c40b202634154eab307))
 * improves mouse tracking ([77e8c02](https://github.com/stan-smith/FossFLOW/commit/77e8c02c736f4d299121691f173dcecf2895c963))
 * improves panning mode UX ([2230637](https://github.com/stan-smith/FossFLOW/commit/2230637a529dd1717fcac0f9dfe9622252959cb2))
 * improves panning mode UX ([4b0d3d8](https://github.com/stan-smith/FossFLOW/commit/4b0d3d86e9d2cc4b6ecba65072c2b9b461918ed3))
@@ -517,7 +517,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * prevents user highlighting while dragging ([7a5b996](https://github.com/stan-smith/FossFLOW/commit/7a5b99668b2b4cfcc95aa0092920344d41305f85))
 * reduces height of node labels ([d551897](https://github.com/stan-smith/FossFLOW/commit/d551897bdabd1b5727810e645cc6543ba441b702))
 * reduces size of icons slightly ([32f4b12](https://github.com/stan-smith/FossFLOW/commit/32f4b129b99e9433ebd073c9f3ba793a67ddcf57))
-* refactors schema to accomodate model ([ad5a4e0](https://github.com/stan-smith/FossFLOW/commit/ad5a4e06f38f3da7bb5c8cb50da7ccd50991a722))
+* refactors schema to accommodate model ([ad5a4e0](https://github.com/stan-smith/FossFLOW/commit/ad5a4e06f38f3da7bb5c8cb50da7ccd50991a722))
 * reinstates interactions ([97d65fa](https://github.com/stan-smith/FossFLOW/commit/97d65fabf40f0ea7d9311083468f90c8af3d22e5))
 * removes buggy scrollTo node when label expanded ([b0c5c9d](https://github.com/stan-smith/FossFLOW/commit/b0c5c9d4c3d832a8dc9d1dd3ba052c52f3321653))
 * removes color from node schema ([ccea412](https://github.com/stan-smith/FossFLOW/commit/ccea412b8d07f67efc28b5f4db2aecc7e86233b3))
