@@ -31,12 +31,13 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
 
   const menuItems = useMemo(() => {
     if (!contextMenu) return menuItemsBeforeClosing;
+    const uiState = uiStateApi.getState();
+
     if (contextMenu.type === 'SELECTION') {
       return [
         {
           label: 'Copy Selection',
           onClick: () => {
-            const uiState = uiStateApi.getState();
             scene.copyObjectsToClipboard(uiState);
             onClose();
           }
@@ -104,7 +105,14 @@ export const ContextMenuManager = ({ anchorEl }: Props) => {
           }
           onClose();
         }
-      }
+      },
+      ...(uiState.isAnythingCopied ? [{ 
+        label: 'Paste',
+        onClick: () => {
+          scene.pasteObjectsFromClipboard(uiState, scene);
+          onClose();
+        }
+      }] : [])
     ]
   }, 
   [contextMenu && contextMenu.type, contextMenu?.item]);

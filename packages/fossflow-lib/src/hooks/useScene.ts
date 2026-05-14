@@ -459,12 +459,18 @@ export const useScene = () => {
         }
       }
     }));
+
+    uiState.actions.setIsAnythingCopied(true);
   }
 
   const pasteObjectsFromClipboard: (uiState: UiStateStore, activeScene: ReturnType<typeof useScene>) => Promise<void> = 
   async (uiState, activeScene) => {
     const pastedArray = await getPastedObject();
-    if (!isPastedValid(pastedArray)) return;
+
+    if (!isPastedValid(pastedArray)) {
+      uiState.actions.setIsAnythingCopied(false); // Remove paste option if object on clipboard is invalid (clipboard item possibly not from fossflow)
+      return;
+    };
 
     saveToHistoryBeforeChange();
     transactionInProgress.current = true;
