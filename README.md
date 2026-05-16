@@ -9,29 +9,16 @@
 <a href="https://trendshift.io/repositories/15118" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15118" alt="stan-smith%2FFossFLOW | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </p>
 
-<b>Hey!</b> Stan here, if you've used FossFLOW and it's helped you, <b>I'd really appreciate if you could donate something small :)</b> I work full time, and finding the time to work on this project is challenging enough.
-If you've had a feature that I've implemented for you, or fixed a bug it'd be great if you could :) if not, that's not a problem, this software will always remain free!
+## Note:
+This repo is a fork of stan-smith/FossFLOW originally made for the purpose of contributing to the original repo through PRs, however the username of the author seems to have been changed to [mug-book-droid](https://github.com/mug-book-droid) and their activity set to private (account suspended maybe?), making the original repo inaccessible.
 
+For now, I intend to make the `dev` branch in this repo a continuation of development to FossFLOW from myself, and any contributions through PRs are welcome as well. 
 
-<b>Also!</b> If you haven't yet, please check out the underlying library this is built on by <a href="https://github.com/markmanx/isoflow">@markmanx</a> I truly stand on the shoulders of a giant here 🫡
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P61KBXA3)
-
-<a href="https://www.buymeacoffee.com/stan.smith" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
-
-Thanks,
-
--Stan
+You can check out the last state of the original repo that I could fetch on `master` branch.
 
 ## Try it online
 <p align="center">
-Go to  <b> --> https://stan-smith.github.io/FossFLOW/ <-- </b>
-</p>
-<p align="center">
-
- <a href="https://github.com/stan-smith/SlingShot">
-  Check out my latest project: <b>SlingShot</b> - Dead easy video streaming over QUIC
- </a>
+Go to  <b> --> https://abrar74774.github.io/FossFLOW/ <-- </b>
 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------
@@ -46,7 +33,7 @@ FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beaut
 
 ![Screenshot_20250630_160954](https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55)
 
-- **🤝 [CONTRIBUTING.md](https://github.com/stan-smith/FossFLOW/blob/master/CONTRIBUTING.md)** - How to contribute to the project.
+- **🤝 [CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute to the project.
 
 ## 🐳 Quick Deploy with Docker
 
@@ -86,7 +73,7 @@ docker run -p 80:80 \
 
 ```bash
 # Clone the repository
-git clone https://github.com/stan-smith/FossFLOW
+git clone https://github.com/Abrar74774/FossFLOW
 cd FossFLOW
 
 # Install dependencies
