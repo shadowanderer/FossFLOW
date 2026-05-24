@@ -31,7 +31,7 @@ Go to  <b> --> https://abrar74774.github.io/FossFLOW/ <-- </b>
 
 FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the <a href="https://github.com/markmanx/isoflow">Isoflow</a> (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.
 
-![Screenshot_20250630_160954](https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55)
+<img width="100%" alt="FossFLOW-Isometric-Diagramming-Tool" src="https://github.com/user-attachments/assets/15956888-991a-4b5e-9849-dbd82d6f9308" />
 
 - **🤝 [CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute to the project.
 
