@@ -14,7 +14,7 @@ body:
         - Cloud hosting or SaaS features
         - Anything that fundamentally changes what FossFLOW is
         
-        If you're unsure whether your idea fits, open a [Discussion](https://github.com/stan-smith/FossFLOW/discussions) first.
+        If you're unsure whether your idea fits, open a [Discussion](https://github.com/Abrar74774/FossFLOW/discussions) first.
 
   - type: checkboxes
     id: preflight
