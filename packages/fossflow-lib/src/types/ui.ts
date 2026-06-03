@@ -162,7 +162,7 @@ export const DialogTypeEnum = {
 } as const;
 
 export interface ContextMenu {
-  type: 'ITEM' | 'EMPTY';
+  type: 'ITEM' | 'EMPTY' | 'SELECTION';
   item?: ItemReference;
   tile: Coords;
 }
@@ -192,7 +192,7 @@ export interface UiState {
   connectorInteractionMode: ConnectorInteractionMode;
   expandLabels: boolean;
   iconPackManager: IconPackManagerProps | null;
-
+  isAnythingCopied: boolean;
 }
 
 export interface UiStateActions {
@@ -220,7 +220,7 @@ export interface UiStateActions {
   setConnectorInteractionMode: (mode: ConnectorInteractionMode) => void;
   setExpandLabels: (expand: boolean) => void;
   setIconPackManager: (iconPackManager: IconPackManagerProps | null) => void;
-
+  setIsAnythingCopied: (isAnythingCopied: boolean) => void;
 }
 
 export type UiStateStore = UiState & {

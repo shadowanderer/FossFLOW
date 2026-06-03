@@ -425,16 +425,18 @@ export const useScene = () => {
     [createModelItem, createViewItem, saveToHistoryBeforeChange]
   );
 
-  const copyObjectsToClipboard = (uiState: UiStateStore) => {
+  const copyObjectsToClipboard = (uiState: UiStateStore, selectedItem?: ItemReference) => {
     const model = modelStoreApi.getState()
-    const selectedObjects = (
-      uiState.mode.type === 'LASSO' ||
-      uiState.mode.type === 'FREEHAND_LASSO'
-    ) && uiState.mode.selection ?
-      uiState.mode.selection.items
-      :
-      [uiState.itemControls && 'id' in uiState.itemControls ? (uiState.itemControls as ItemReference) : null].filter(Boolean) as ItemReference[];
-
+    const selectedObjects = 
+      selectedItem ? [selectedItem] :
+      (
+        uiState.mode.type === 'LASSO' ||
+        uiState.mode.type === 'FREEHAND_LASSO'
+      ) && uiState.mode.selection ?
+        uiState.mode.selection.items
+        :
+        [uiState.itemControls && 'id' in uiState.itemControls ? (uiState.itemControls as ItemReference) : null].filter(Boolean) as ItemReference[];
+        
     copyObject(selectedObjects.map((currentItem) => {
       if (!currentItem) return;
       switch (currentItem.type) {
@@ -457,12 +459,18 @@ export const useScene = () => {
         }
       }
     }));
+
+    uiState.actions.setIsAnythingCopied(true);
   }
 
   const pasteObjectsFromClipboard: (uiState: UiStateStore, activeScene: ReturnType<typeof useScene>) => Promise<void> = 
   async (uiState, activeScene) => {
     const pastedArray = await getPastedObject();
-    if (!isPastedValid(pastedArray)) return;
+
+    if (!isPastedValid(pastedArray)) {
+      uiState.actions.setIsAnythingCopied(false); // Remove paste option if object on clipboard is invalid (clipboard item possibly not from fossflow)
+      return;
+    };
 
     saveToHistoryBeforeChange();
     transactionInProgress.current = true;
