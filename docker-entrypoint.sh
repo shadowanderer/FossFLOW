@@ -1,12 +1,17 @@
 #!/bin/sh
 
+
 # Start Node.js backend if server storage is enabled
 if [ "$ENABLE_SERVER_STORAGE" = "true" ]; then
     echo "Starting FossFLOW backend server..."
     cd /app/packages/fossflow-backend
     npm install --production
-    node server.js &
-    echo "Backend server started"
+    if [ -n "$PUID" ] && [ -n "$PGID" ]; then
+        su-exec $PUID:$PGID node server.js &
+    else 
+        node server.js
+    fi
+    echo "Backend server started with user 1234:4321 (hopefully)"
 else
     echo "Server storage disabled, backend not started"
 fi

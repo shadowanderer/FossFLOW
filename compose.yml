@@ -1,7 +1,8 @@
 services:
   fossflow:
-    image: abrar74774/fossflow:latest
-    pull_policy: always
+    # image: abrar74774/fossflow:latest
+    # pull_policy: always
+    build: .
     ports:
       - 80:80
     environment:
@@ -11,5 +12,7 @@ services:
       - ENABLE_GIT_BACKUP=${ENABLE_GIT_BACKUP:-false}
       - HTTP_AUTH_USER=${HTTP_AUTH_USER:-}
       - HTTP_AUTH_PASSWORD=${HTTP_AUTH_PASSWORD:-}
+      - PUID=${PUID:-}
+      - PGID=${PGID:-}
     volumes:
       - ./diagrams:/data/diagrams

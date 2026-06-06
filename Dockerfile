@@ -25,7 +25,7 @@ RUN npm run build:lib && npm run build:app
 FROM node:24-alpine
 
 # Install web server packages
-RUN apk add --no-cache nginx openssl
+RUN apk add --no-cache nginx openssl su-exec
 
 # Copy backend code
 COPY --from=build /app/packages/fossflow-backend /app/packages/fossflow-backend
