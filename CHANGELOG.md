@@ -5,6 +5,12 @@ All notable changes to FossFLOW will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1](https://github.com/Abrar74774/FossFLOW/compare/v1.0.0...v1.0.1) (2026-07-11)
+
+### Bug Fixes
+
+* resolve infinite rerender bug which caused CPU spikes ([#7](https://github.com/Abrar74774/FossFLOW/issues/7)) ([0cefaad](https://github.com/Abrar74774/FossFLOW/commit/0cefaadebec04b9143ecc7f467ad0a7f97d9a211))
+
 ## 1.0.0 (2026-06-03)
 
 ### Features
