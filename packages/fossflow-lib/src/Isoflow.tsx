@@ -3,8 +3,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import { theme } from 'src/styles/theme';
 import { IsoflowProps } from 'src/types';
-import { setWindowCursor, modelFromModelStore } from 'src/utils';
-import { useModelStore, ModelProvider } from 'src/stores/modelStore';
+import { setWindowCursor } from 'src/utils';
+import { useModelStore, ModelProvider, useModelStoreApi } from 'src/stores/modelStore';
 import { SceneProvider } from 'src/stores/sceneStore';
 import { LocaleProvider } from 'src/stores/localeStore';
 import { GlobalStyles } from 'src/styles/GlobalStyles';
@@ -31,9 +31,7 @@ const App = ({
     return state.actions;
   });
   const initialDataManager = useInitialDataManager();
-  const model = useModelStore((state) => {
-    return modelFromModelStore(state);
-  });
+  const model = useModelStoreApi().getState();
 
   const { load } = initialDataManager;
 
