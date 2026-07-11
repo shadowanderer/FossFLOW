@@ -1,4 +1,4 @@
-import React, { createContext, useRef, useContext } from 'react';
+import React, { createContext, useRef, useContext, useMemo } from 'react';
 import { createStore, useStore } from 'zustand';
 import { ModelStore, Model } from 'src/types';
 import { INITIAL_DATA } from 'src/config';
@@ -197,7 +197,7 @@ export function useModelStore<T>(
   }
 
   const value = useStore(store, selector, equalityFn);
-  return value;
+  return useMemo(() => value, [store, selector]);
 }
 
 export function useModelStoreApi() {
