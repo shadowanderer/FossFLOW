@@ -5,6 +5,14 @@ All notable changes to FossFLOW will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2](https://github.com/Abrar74774/FossFLOW/compare/v1.0.1...v1.0.2) (2026-07-12)
+
+### Bug Fixes
+
+* resolve context menu delay caused by infinite render bugfix ([96466d2](https://github.com/Abrar74774/FossFLOW/commit/96466d28a35206e9a39c593f1317677f2a4d3199))
+* Resolve infinite rendering issue ([0094132](https://github.com/Abrar74774/FossFLOW/commit/0094132e531c50d6835f68bfa72ee5954e19cb8e))
+* revert previous fix which nullifies the rerender fix ([b3c2326](https://github.com/Abrar74774/FossFLOW/commit/b3c23267df03bee3a462e5d5fd916586589e0091))
+
 ## [1.0.1](https://github.com/Abrar74774/FossFLOW/compare/v1.0.0...v1.0.1) (2026-07-11)
 
 ### Bug Fixes
