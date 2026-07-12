@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import { theme } from 'src/styles/theme';
 import { IsoflowProps } from 'src/types';
-import { modelFromModelStore, setWindowCursor } from 'src/utils';
+import { setWindowCursor } from 'src/utils';
 import { useModelStore, ModelProvider, useModelStoreApi } from 'src/stores/modelStore';
 import { SceneProvider } from 'src/stores/sceneStore';
 import { LocaleProvider } from 'src/stores/localeStore';
@@ -52,10 +52,9 @@ const App = ({
 
   useEffect(() => {
     if (!initialDataManager.isReady || !onModelUpdated) return;
-
-    const model = modelFromModelStore(modelStoreApi.getState())
+    const model = modelStoreApi.getState()
     onModelUpdated(model);
-  }, [modelFromModelStore(modelStoreApi.getState()), initialDataManager.isReady, onModelUpdated]);
+  }, [modelStoreApi.getState(), initialDataManager.isReady, onModelUpdated]);
 
   useEffect(() => {
     uiStateActions.setEnableDebugTools(enableDebugTools);
