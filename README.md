@@ -9,6 +9,13 @@
 <a href="https://trendshift.io/repositories/15118" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15118" alt="stan-smith%2FFossFLOW | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </p>
 
+## Windows环境构建
+```shell
+# powershell中打开
+$env:PUBLIC_URL = "/fossflow/"; npm run build
+```
+
+
 ## Note:
 This repo is a fork of stan-smith/FossFLOW (which in turn was a fork of [markmanx/isoflow](https://github.com/markmanx/isoflow)) originally made for the purpose of contributing to the original repo through PRs, however the username of the author seems to have been changed to [mug-book-droid](https://github.com/mug-book-droid) and their activity set to private (account suspended maybe?), making the original repo inaccessible.
 
