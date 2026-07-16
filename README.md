@@ -11,7 +11,9 @@
 
 ## Windows环境构建
 ```shell
-# powershell中打开
+# powershell中打开项目根目录并运行
+npm install
+# 构建
 $env:PUBLIC_URL = "/fossflow/"; npm run build
 ```
 
